@@ -1,0 +1,1 @@
+Somos uma escola de desenvolvimento web que tem comprometimento genuíno com o sucesso profissional de quem estuda conosco. Com o nosso Modelo de Sucesso Compartilhado (MSC), a pessoa estudante tem a opção de pagar apenas quando já estiver trabalhando.
