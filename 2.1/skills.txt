@@ -3,5 +3,9 @@ O que eu vou aprender na Trybe:
 - Unix
 - Bash
 - Git
+<<<<<<< .merge_file_ng4zNn
 - HTML
 - CSS
+=======
+Python
+>>>>>>> .merge_file_7gL9Xt
