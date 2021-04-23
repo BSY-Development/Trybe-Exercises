@@ -10,6 +10,8 @@ for (num of numbers) {
 
 let media = soma / numbers.length;
 
+// Exercicio 4
+
 if (media > 20) {
     console.log("Valor maior que 20.");
 } else {
