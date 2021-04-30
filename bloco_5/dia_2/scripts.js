@@ -69,3 +69,5 @@ headThree.classList.add('description');
 // III- Remova o div criado no passo 5 (aquele que possui a classe left-content ). Utilize a função .removeChild() ;
 divElement.removeChild(divThird);
 
+// IV- Centralize o div criado no passo 6 (aquele que possui a classe right-content ). Dica: para centralizar, basta configurar o margin-right: auto do div ;
+divFourth.style.marginRight = 'auto';
