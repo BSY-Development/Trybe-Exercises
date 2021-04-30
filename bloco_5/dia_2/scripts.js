@@ -74,3 +74,7 @@ divFourth.style.marginRight = 'auto';
 
 // V- Troque a cor de fundo do elemento pai da div criada no passo 3 (aquela que possui a classe center-content ) para a cor verde;
 divSecond.parentNode.style.backgroundColor = 'Green';
+
+// VI- Remova os dois últimos elementos ( nove e dez ) da lista criada no passo 8.
+ulCreation.removeChild(ulCreation.lastChild);
+ulCreation.removeChild(ulCreation.lastChild);
