@@ -57,3 +57,6 @@ divElement.appendChild(headThree);
 headOne.innerHTML = "Tag one";
 headTwo.innerHTML = "Tag two";
 headThree.innerHTML = "Tag three";
+
+// I- Adicione a classe title na tag h1 criada;
+title.classList.add('title');
