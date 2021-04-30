@@ -60,3 +60,9 @@ headThree.innerHTML = "Tag three";
 
 // I- Adicione a classe title na tag h1 criada;
 title.classList.add('title');
+
+// II- Adicione a classe description nas 3 tags h3 criadas;
+headOne.classList.add('description');
+headTwo.classList.add('description');
+headThree.classList.add('description');
+
