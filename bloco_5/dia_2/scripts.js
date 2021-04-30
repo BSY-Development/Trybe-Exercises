@@ -41,8 +41,19 @@ let numExtenso = ['Um', 'Dois', 'Três', 'Quatro', 'Cinco', 'Seis', 'Sete', 'Oit
 let ulCreation = document.createElement('ul');
 divFourth.appendChild(ulCreation);
 
-for (let i = 0; i < numExtenso.length; i += 1){
+for (let i = 0; i < numExtenso.length; i += 1) {
     let liCreation = document.createElement('li');
     liCreation.innerHTML = numExtenso[i];
     ulCreation.appendChild(liCreation);
 }
+
+// 9- Adicione 3 tags h3 , todas sendo filhas do div criado no passo 2.
+let headOne = document.createElement('h3');
+let headTwo = document.createElement('h3');
+let headThree = document.createElement('h3');
+divElement.appendChild(headOne);
+divElement.appendChild(headTwo);
+divElement.appendChild(headThree);
+headOne.innerHTML = "Tag one";
+headTwo.innerHTML = "Tag two";
+headThree.innerHTML = "Tag three";
