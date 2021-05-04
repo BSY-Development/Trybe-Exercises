@@ -109,6 +109,7 @@ for (let i = 0; i < allDays.length; i += 1) {
 
 // Exercicio 7 - Adicionar Tarefa personalizadas 
 const tasks = document.querySelector('.my-tasks');
+
 function tarefas(text) {
     let work = document.createElement('span');
     work.innerHTML = text;
@@ -126,3 +127,9 @@ function changeColor(color) {
 }
 
 changeColor('orange');
+
+// Exercicio 9 - Adicionar classe selected ao clicar na bolinha
+const selectColor = document.querySelector('.task');
+selectColor.addEventListener('click', function () {
+    selectColor.classList.toggle('selected');
+});
