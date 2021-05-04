@@ -116,3 +116,13 @@ function tarefas(text) {
 }
 
 tarefas('Estudar');
+
+// Exercicio 8 - Adicionar uma div com a class task.
+function changeColor(color) {
+    let cor = document.createElement('div');
+    cor.classList.add('task');
+    cor.style.backgroundColor = color;
+    tasks.appendChild(cor);
+}
+
+changeColor('orange');
