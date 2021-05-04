@@ -1,0 +1,42 @@
+body {
+    margin-left: 15px;
+}
+
+h1 {
+    text-align: center;
+    font-family: monospace;
+}
+
+label {
+    margin-left: 5%;
+}
+
+aside {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+article {
+    text-align: justify;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button {
+    color: #0099CC;
+    background-color: transparent;
+    border: 2px solid #0099CC;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+button:hover {
+    color: #186b86;
+    border: 2px solid #04455a;
+}
+
+footer {
+    margin: 30px 15px 30px 0;
+    float: right;
+}
