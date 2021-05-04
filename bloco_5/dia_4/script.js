@@ -2,6 +2,7 @@ let background = document.querySelector('#background');
 let textColor = document.querySelector('#text-color');
 let text = document.querySelector('article');
 let fontSize = document.querySelector('#fonte');
+let spacing = document.querySelector('#spacing');
 
 // Cor de fundo da tela;
 background.addEventListener('input', function () {
@@ -17,3 +18,8 @@ textColor.addEventListener('input', function () {
 fontSize.addEventListener('input', function () {
     text.style.fontSize = fontSize.value + 'px';
 });
+
+// Espaçamento entre as linhas do texto;
+spacing.addEventListener('input', function () {
+    text.style.lineHeight = spacing.value + 'px';
+}); 
