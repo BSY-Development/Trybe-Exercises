@@ -5,6 +5,8 @@ const lista = document.querySelector('#days');
 const btnContainer = document.querySelector('.buttons-container');
 let active = false;
 let fridayOn = false;
+const input = document.querySelector('#task-input');
+const inputContainer = document.querySelector('.input-container');
 
 
 function createDaysOfTheWeek() {
@@ -147,3 +149,30 @@ for (let i = 0; i < allDays.length; i += 1) {
         }
     });
 }
+
+// Bônus - Adicionar Compromissos com a caixa de texto.
+function createAppointment() {
+    let compromisso = document.createElement('div');
+    compromisso.innerHTML = input.value;
+    inputContainer.appendChild(compromisso);
+    input.value = '';
+}
+
+const btnAdd = document.querySelector('#btn-add');
+btnAdd.addEventListener('click', function () {
+    if (input.value.length === 0) {
+        alert('Campo vazio, digite algo para adicionar.');
+    } else {
+        createAppointment();
+    }
+});
+
+input.addEventListener("keyup", function (event) {
+    if (event.code === 'Enter' || event.code === 'NumpadEnter') {
+        if (input.value.length === 0) {
+            alert('Campo vazio, digite algo para adicionar.');
+        } else {
+            createAppointment();
+        }
+    }
+});
