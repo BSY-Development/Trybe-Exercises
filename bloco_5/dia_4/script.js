@@ -1,5 +1,7 @@
 let background = document.querySelector('#background');
-let text = document.querySelector('#text-color');
+let textColor = document.querySelector('#text-color');
+let text = document.querySelector('article');
+let fontSize = document.querySelector('#fonte');
 
 // Cor de fundo da tela;
 background.addEventListener('input', function () {
@@ -7,6 +9,11 @@ background.addEventListener('input', function () {
 });
 
 // Cor do texto;
-text.addEventListener('input', function () {
-    document.body.style.color = text.value;
+textColor.addEventListener('input', function () {
+    document.body.style.color = textColor.value;
+});
+
+// Tamanho da fonte;
+fontSize.addEventListener('input', function () {
+    text.style.fontSize = fontSize.value + 'px';
 });
