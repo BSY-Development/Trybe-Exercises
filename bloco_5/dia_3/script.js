@@ -126,10 +126,24 @@ function changeColor(color) {
     tasks.appendChild(cor);
 }
 
-changeColor('orange');
+let colorCircle = 'orange';
+changeColor(colorCircle);
 
 // Exercicio 9 - Adicionar classe selected ao clicar na bolinha
 const selectColor = document.querySelector('.task');
 selectColor.addEventListener('click', function () {
     selectColor.classList.toggle('selected');
 });
+
+// Exercicio 10 - Muda a cor do dia para a cor do circulo caso ele tenha a classe selecionado (CLicar em cima dele para por ou tirar)
+for (let i = 0; i < allDays.length; i += 1) {
+    allDays[i].addEventListener('click', function () {
+        if (selectColor.classList.contains('selected')) {
+            if (allDays[i].style.color === colorCircle) {
+                allDays[i].style.color = 'rgb(119, 119, 119)';
+            } else {
+                allDays[i].style.color = colorCircle;
+            }
+        }
+    });
+}
