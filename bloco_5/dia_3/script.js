@@ -3,7 +3,6 @@ const feriados = [24, 25, 31];
 const sexta = [4, 11, 18, 25];
 const lista = document.querySelector('#days');
 const btnContainer = document.querySelector('.buttons-container');
-let active = false;
 let fridayOn = false;
 const input = document.querySelector('#task-input');
 const inputContainer = document.querySelector('.input-container');
@@ -17,7 +16,6 @@ function createDaysOfTheWeek() {
         const days = weekDays[index];
         const dayListItem = document.createElement('li');
         dayListItem.innerHTML = days;
-
         weekDaysList.appendChild(dayListItem);
     };
 };
@@ -51,19 +49,14 @@ creatingButton('Feriados');
 // Exercicio 3 - Mudar a cor de fundo dos feriados
 let holidayBtn = document.querySelector('#btn-holiday');
 let allHolidays = document.querySelectorAll('.holiday');
-holidayBtn.addEventListener('click', function () {
 
+holidayBtn.addEventListener('click', function () {
     for (let i = 0; i < allHolidays.length; i += 1) {
-        if (active) {
+        if (allHolidays[i].style.backgroundColor === "rgb(255, 166, 0)") {
             allHolidays[i].style.backgroundColor = "rgb(238, 238, 238)";
         } else {
             allHolidays[i].style.backgroundColor = "rgb(255, 166, 0)";
         }
-    }
-    if (active) {
-        active = false;
-    } else {
-        active = true;
     }
 });
 
@@ -80,20 +73,14 @@ creatingFriday('Sexta-feira');
 // Exercicio 5 - Mudar texto das sextas com ida e volta.
 let allFridays = document.querySelectorAll('.friday');
 let fridayBtn = document.querySelector('#btn-friday');
+
 fridayBtn.addEventListener('click', function () {
-    if (fridayOn) {
-        for (let i = 0; i < allFridays.length; i += 1) {
+    for (let i = 0; i < allFridays.length; i += 1) {
+        if (allFridays[i].innerHTML === 'Sextou!') {
             allFridays[i].innerHTML = sexta[i];
-        }
-    } else {
-        for (let i = 0; i < allFridays.length; i += 1) {
+        } else {
             allFridays[i].innerHTML = 'Sextou!';
         }
-    }
-    if (fridayOn) {
-        fridayOn = false;
-    } else {
-        fridayOn = true;
     }
 });
 
@@ -106,7 +93,6 @@ for (let i = 0; i < allDays.length; i += 1) {
     allDays[i].addEventListener('mouseout', function () {
         allDays[i].style.transform = 'scale(1.0)';
     });
-
 }
 
 // Exercicio 7 - Adicionar Tarefa personalizadas 
@@ -159,6 +145,7 @@ function createAppointment() {
 }
 
 const btnAdd = document.querySelector('#btn-add');
+
 btnAdd.addEventListener('click', function () {
     if (input.value.length === 0) {
         alert('Campo vazio, digite algo para adicionar.');
