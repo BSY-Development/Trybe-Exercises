@@ -107,4 +107,12 @@ for (let i = 0; i < allDays.length; i += 1) {
 
 }
 
-// Exercicio 7 - 
+// Exercicio 7 - Adicionar Tarefa personalizadas 
+const tasks = document.querySelector('.my-tasks');
+function tarefas(text) {
+    let work = document.createElement('span');
+    work.innerHTML = text;
+    tasks.appendChild(work);
+}
+
+tarefas('Estudar');
