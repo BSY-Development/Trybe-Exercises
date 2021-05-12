@@ -1,52 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
+
 <body>
+    <h1>Formulário</h1>
     <form action="" method="get">
         <fieldset>
-            <label for="">Nome</label>
-            <input type="text" maxlength="40" required>
+            <div class="form-group">
+                <label for="">Nome</label>
+                <br>
+                <input name="nome" type="text" maxlength="40" required>
+            </div>
             <br>
-            <label for="">E-mail</label>
-            <input type="text" name="" id="" maxlength="50" required>
+            <div class="form-group">
+                <label for="">E-mail</label>
+                <br>
+                <input type="text" name="email" id="" maxlength="50" required>
+            </div>
             <br>
-            <label for="">CPF</label>
-            <input type="text" name="" id="" maxlength="11" required>
+            <div class="form-group">
+                <label for="">CPF</label>
+                <br>
+                <input type="text" name="" id="" maxlength="11" required>
+            </div>
             <br>
-            <label for="">Endereço</label>
-            <input type="text" name="" id="" maxlength="200" required>
+            <div class="form-group">
+                <label for="">Endereço</label>
+                <br>
+                <input type="text" name="" id="" maxlength="200" required>
+            </div>
             <br>
-            <label for="">Cidade</label>
-            <input type="text" name="" id="" maxlength="28" required>
+            <div class="form-group">
+                <label for="">Cidade</label>
+                <br>
+                <input type="text" name="" id="" maxlength="28" required>
+            </div>
             <br>
-            <label for="">Estado</label>
-            <select name="estados" id="estados" required></select>
+            <div class="form-group">
+                <label for="">Estado</label>
+                <br>
+                <select name="estados" id="estados" required></select>
+            </div>
             <br>
-            <label for="">Tipo</label>
-            <label for="casa"><input type="radio" name="moradia" id="casa" required>Casa</label>
-            <label for="apart"><input type="radio" name="moradia" id="apart">Apartamento</label>
+            <div class="form-group">
+                <label for="">Tipo</label>
+                <br>
+                <label for="casa"><input type="radio" name="moradia" id="casa" checked>Casa</label>
+                <label for="apart"><input type="radio" name="moradia" id="apart">Apartamento</label>
+            </div>
         </fieldset>
         <fieldset>
-            <label for="">Resumo do Currículo</label>
-            <textarea name="" id="" cols="30" rows="10" maxlength="1000" required></textarea>
             <br>
-            <label for="">Cargo</label>
-            <input type="text" name="" id="" maxlength="40" required>
+            <div class="form-group">
+                <label for="">Resumo do Currículo</label>
+                <br>
+                <textarea name="" id="" cols="30" rows="10" maxlength="1000" required></textarea>
+            </div>
             <br>
-            <label for="">Descrição do cargo</label>
-            <input type="text" maxlength="500" required>
+            <div class="form-group">
+                <label for="">Cargo</label>
+                <br>
+                <input type="text" name="" id="" maxlength="40" required>
+            </div>
             <br>
-            <label for="">Data de início</label>
-            <input type="date" name="" id="">
+            <div class="form-group">
+                <label for="">Descrição do cargo</label>
+                <br>
+                <input type="text" maxlength="500" required>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="">Data de início</label>
+                <br>
+                <input type="date" name="" id="">
+            </div>
         </fieldset>
-        <button type="reset" value="reset">Limpar</button>
+        <br>
+        <button type="submit" id="check" class="btn btn-primary">Checar</button>
+        <button type="reset" value="reset" class="btn btn-danger">Limpar</button>
     </form>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous">
+    </script>
     <script src="script.js"></script>
 </body>
+
 </html>

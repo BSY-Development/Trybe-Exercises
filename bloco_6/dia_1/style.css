@@ -1,0 +1,16 @@
+body {
+    text-align: center;
+    background-color: rgb(235, 225, 225);
+}
+
+fieldset {
+    border: 1px solid black;
+    width: 50%;
+    margin: 15px auto;
+    background-color: white;
+}
+
+button {
+    margin-left: 10px;
+    margin-bottom: 30px;
+}
