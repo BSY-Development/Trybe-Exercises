@@ -13,9 +13,18 @@
 testingScope(true); */
 
 // Exercicio 2
-const oddsAndEvens = [13, 3, 4, 10, 7, 2];
-
-// Seu código aqui.
+/* const oddsAndEvens = [13, 3, 4, 10, 7, 2];
 oddsAndEvens.sort((a, b) => a-b);
 
-console.log(`Os números ${oddsAndEvens} se encontram ordenados de forma crescente!`);
+console.log(`Os números ${oddsAndEvens} se encontram ordenados de forma crescente!`); */
+
+// Exercicio 2-1 || Crie uma função que receba um número e retorne seu fatorial.
+const fatorial = (num) => {
+  if(num <= 1) {
+    return num;
+  } else {
+    return num * fatorial(num-1)
+  }
+}
+
+console.log(fatorial(3));
