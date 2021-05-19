@@ -30,9 +30,16 @@ console.log(`Os números ${oddsAndEvens} se encontram ordenados de forma crescen
 console.log(fatorial(3)); */
 
 // Exercicio 2-2 || Crie uma função que receba uma frase e retorne qual a maior palavra.
-const longestWord = (word) => {
+/* const longestWord = (word) => {
   arrayWords = word.split(' ');
   const ordered = arrayWords.sort((a,b) => a.length - b.length);
-  console.log(ordered[ordered.length-1]);
+  return ordered[ordered.length-1];
 }
-longestWord("Antônio foi no banheiro e não sabemos o que aconteceu");
+longestWord("Antônio foi no banheiro e não sabemos o que aconteceu"); */
+
+// Exercicio 2-3
+let clickCount = 0;
+const click = document.querySelector('button');
+const score = document.querySelector('h1');
+
+click.addEventListener('click', () => score.innerHTML = parseInt(score.innerHTML, 10) + 1);
