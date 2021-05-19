@@ -38,8 +38,37 @@ console.log(fatorial(3)); */
 longestWord("Antônio foi no banheiro e não sabemos o que aconteceu"); */
 
 // Exercicio 2-3
-let clickCount = 0;
+/* let clickCount = 0;
 const click = document.querySelector('button');
 const score = document.querySelector('h1');
 
-click.addEventListener('click', () => score.innerHTML = parseInt(score.innerHTML, 10) + 1);
+click.addEventListener('click', () => score.innerHTML = parseInt(score.innerHTML, 10) + 1); */
+
+// Exercicio 2-4
+// Parte 2
+const skills = ['Python', 'HTML', 'CSS', 'Javascript', 'GitHub'];
+
+// Parte 1
+const substitution = (param) => {
+  const string = 'Tryber x aqui!';
+  const arr = string.split(' ');
+  for (let i = 0; i < arr.length; i += 1) {
+    if (arr[i] === 'x') {
+      arr[i] = param;
+    }
+  }
+  return arr.join(' ');
+}
+
+// Parte 3
+const skillSubstitution = (text) => {
+  skills.sort();
+  return `${text} Minhas cinco principais habilidades são: 
+  - ${skills[0]};
+  - ${skills[1]};
+  - ${skills[2]};
+  - ${skills[3]};
+  - ${skills[4]}; #goTrybe`;
+}
+
+console.log(skillSubstitution(substitution('Bruno')));
