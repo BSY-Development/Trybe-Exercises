@@ -32,3 +32,8 @@ modify(lesson2, 'turno', 'manhã');
 const listKeys = (obj) => console.log(Object.keys(obj));
 
 listKeys(lesson1);
+
+// Crie uma função para mostrar o tamanho de um objeto.
+const tamanho = (obj) => console.log(Object.keys(obj).length);
+
+tamanho(lesson2);
