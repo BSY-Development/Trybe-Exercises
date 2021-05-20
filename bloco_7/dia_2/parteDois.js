@@ -1,5 +1,6 @@
 const { count } = require("console");
 const { all } = require("prelude-ls");
+const { report } = require("process");
 
 const lesson1 = {
   materia: 'Matemática',
@@ -57,7 +58,7 @@ const allLessons = Object.assign({}, {lesson1}, {lesson2}, {lesson3});
 function six() {
   let count = 0;
   for (item in allLessons) {
-    count = count + parseInt(allLessons[item].numeroEstudantes);
+    count += allLessons[item].numeroEstudantes;
   }
   return count;
 }
@@ -86,10 +87,30 @@ function math(allLessons) {
   let count = 0;
   for (item in allLessons) {
     if(allLessons[item].materia === 'Matemática') {
-      count += parseInt(allLessons[item].numeroEstudantes);
+      count += allLessons[item].numeroEstudantes;
     }
   }
   return count;
 }
 
 console.log(math(allLessons));
+
+// Crie uma função que deverá retornar um objeto que representa o relatório do professor ou professora, 
+// as aulas que ele ou ela ministrou e o número total de estudantes. Use o objeto criado no exercício 5:
+function createReport(allLessons, teacher) {
+  const report = {
+    professor: teacher,
+    aulas: [],
+    estudantes: 0,
+  }
+
+  for (item in allLessons) {
+    if (allLessons[item].professor === teacher) {
+      report.aulas.push(allLessons[item].materia);
+      report.estudantes += allLessons[item].numeroEstudantes;
+    }
+  }
+  return report;
+}
+
+console.log(createReport(allLessons, 'Maria Clara'));
