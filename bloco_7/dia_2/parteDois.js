@@ -1,4 +1,5 @@
 const { count } = require("console");
+const { all } = require("prelude-ls");
 
 const lesson1 = {
   materia: 'Matemática',
@@ -78,3 +79,17 @@ function compareIfExist(obj, chave, valor) {
 }
 
 console.log(compareIfExist(lesson3, 'professor', 'Maria Clara'));
+
+// Bonus Crie uma função para contar quantos estudantes assistiram às aulas de Matemática. 
+// Use o objeto criado no exercício 5.
+function math(allLessons) {
+  let count = 0;
+  for (item in allLessons) {
+    if(allLessons[item].materia === 'Matemática') {
+      count += parseInt(allLessons[item].numeroEstudantes);
+    }
+  }
+  return count;
+}
+
+console.log(math(allLessons));
