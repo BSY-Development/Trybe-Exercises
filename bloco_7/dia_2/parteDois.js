@@ -1,3 +1,5 @@
+const { count } = require("console");
+
 const lesson1 = {
   materia: 'Matemática',
   numeroEstudantes: 20,
@@ -49,3 +51,14 @@ listValues(lesson3);
 const allLessons = Object.assign({}, {lesson1}, {lesson2}, {lesson3});
 // console.log(allLessons);
 
+// Usando o objeto criado no exercício 5, crie uma função que retorne o número total de estudantes em 
+// todas as aulas.
+function six() {
+  let count = 0;
+  for (item in allLessons) {
+    count = count + parseInt(allLessons[item].numeroEstudantes);
+  }
+  return count;
+}
+
+console.log(six());
