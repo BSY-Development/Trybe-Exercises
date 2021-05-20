@@ -37,15 +37,19 @@ const order = {
 // entrega para: Rafael Andrade, Telefone: 11-98763-1416, R. Rua das Flores, Nº: 389, AP: 701".
 const customerInfo = (order) => {
   console.log(`Olá ${order.order.delivery.deliveryPerson}, entrega para: ${order.name}, Telefone: ${order.phoneNumber}, R. ${order.address.street}, Nº: ${order.address.number}, AP: ${order.address.apartment}.`);
-  var teste = ['abcd', 'abcd', 'abcd', 'abcd', 'abcd', 'abcd', 'abcd', 'abcd', 'abcd', 'abcd', 'abcd', 'abcd', 'abcd', 'abcd', 'abcd'];
-  console.log(teste);
 }
 
 customerInfo(order);
 
+// Complete a função orderModifier() para que seu retorno seja similar a "Olá Luiz Silva, o 
+// total do seu pedido de muzzarella, calabresa e Coca-Cola Zero é R$ 50,00."
 const orderModifier = (order) => {
-  // Adicione abaixo as informações necessárias.
-
+  order.order.delivery.deliveryPerson = 'Luiz Silva';
+  order.order.pizza.muzzarella = 'muzzarella';
+  order.order.pizza.calabresa = 'calabresa';
+  order.order.drinks.cocaZero = 'Coca-Cola Zero';
+  order.payment.total = 50;
+  console.log(`Olá ${order.order.delivery.deliveryPerson}, o total do seu pedido de ${order.order.pizza.muzzarella}, ${order.order.pizza.calabresa} e ${order.order.drinks.cocaZero} é R$${order.payment.total},00`);
 }
 
 orderModifier(order);
