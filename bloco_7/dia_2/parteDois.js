@@ -64,8 +64,17 @@ function six() {
 console.log(six());
 
 // Crie uma função que obtenha o valor da chave de acordo com a sua posição no objeto. Por exemplo:
-function getValueByNumber(obj, indice) {
-  console.log(Object.values(obj)[indice]);
-}
+const getValueByNumber = (obj, indice) => console.log(Object.values(obj)[indice]);
 
 getValueByNumber(lesson1, 0);
+
+// Crie uma função que verifique se o par (chave / valor) existe na função. Essa função deve possuir 
+// três parâmetros, sendo eles: o objeto, o nome da chave e o valor da chave. Exemplo:
+function compareIfExist(obj, chave, valor) {
+  if (obj[chave] === valor) {
+    return true;
+  }
+  return false;
+}
+
+console.log(compareIfExist(lesson3, 'professor', 'Maria Clara'));
