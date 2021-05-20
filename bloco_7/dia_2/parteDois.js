@@ -62,3 +62,10 @@ function six() {
 }
 
 console.log(six());
+
+// Crie uma função que obtenha o valor da chave de acordo com a sua posição no objeto. Por exemplo:
+function getValueByNumber(obj, indice) {
+  console.log(Object.values(obj)[indice]);
+}
+
+getValueByNumber(lesson1, 0);
