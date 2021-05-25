@@ -34,4 +34,35 @@ const result = (func, num) => {
   return func(num, randomNumber);
 }
 
-console.log(result(checkWin, 1));
+// console.log(result(checkWin, 1));
+
+/* Exercicio 3 */
+
+const rightAnswers = ['A', 'C', 'B', 'D', 'A', 'A', 'D', 'A', 'D', 'C'];
+const studentAnswers = ['A', 'N.A', 'B', 'C', 'D', 'A', 'N.A', 'A', 'D', 'B'];
+
+const lessThanZero = (score) => {
+  console.log(score)
+  if (score < 0) {
+    return 0;
+  }
+  return score;
+}
+
+const checkCorrect = (correct, answers) => {
+  let score = 0;
+  for (let i = 0; i < correct.length; i += 1) {
+    if (correct[i] === answers[i]) {
+      score += 1;
+    } else if (answers[i] !== 'N.A') {
+      score -= 0.5;
+    }
+  }
+  return lessThanZero(score);
+}
+
+const resultEx3 = (correctAnswers, answers, callback) => {
+  return callback(correctAnswers, answers);
+}
+
+console.log(resultEx3(rightAnswers, studentAnswers, checkCorrect));
