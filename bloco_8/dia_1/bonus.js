@@ -27,9 +27,17 @@ const battleMembers = {
 // Requisito 1
 const dragonAttack = (dragon) => {
   let minimalDamage = 15;
-  let dragonStrength = dragon.strength;
-  let damage = Math.ceil(Math.random() * (dragonStrength - (minimalDamage - 1)) + (minimalDamage - 1));
+  let maximumDamage = dragon.strength;
+  let damage = Math.ceil(Math.random() * (maximumDamage - (minimalDamage - 1)) + (minimalDamage - 1));
   
   return damage;
 }
 
+// Requisito 2
+const warriorAttack = (warrior) => {
+  let minimalDamage = warrior.strength;
+  let maximumDamage = minimalDamage * warrior.weaponDmg;
+  let damage = Math.ceil(Math.random() * (maximumDamage - (minimalDamage - 1)) + (minimalDamage - 1));
+
+  return damage;
+}
