@@ -61,3 +61,12 @@ const books = [{
     releaseYear: 1928,
   },
 ];
+
+// Faça uma função que retorne true , se algum livro foi lançado na década de 80, e false , caso contrário.
+const expectedResult = true;
+
+function someBookWasReleaseOnThe80s() {
+  return books.some((item) => item.releaseYear > 1979 && item.releaseYear < 1990);
+}
+
+assert.strictEqual(someBookWasReleaseOnThe80s(), expectedResult);
