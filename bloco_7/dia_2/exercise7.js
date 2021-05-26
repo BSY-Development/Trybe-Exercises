@@ -61,3 +61,14 @@ const books = [{
     releaseYear: 1928,
   },
 ];
+
+// Faça uma função que retorne true , caso nenhum author tenha nascido no mesmo ano, e false , caso contrário.
+const expectedResult = false;
+
+function authorUnique() {
+  const arr = [];
+  books.forEach((item) => arr.push(item.author.birthYear));
+  return arr.every((item, index) => arr.indexOf(item) === index);
+}
+
+assert.strictEqual(authorUnique(), expectedResult);
