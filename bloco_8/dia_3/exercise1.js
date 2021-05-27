@@ -14,8 +14,7 @@ const expectedResult = [
   ];
   
   function formatedBookNames() {
-    const formatacao = books.map((item) => `${item.name} - ${item.genre} - ${item.author.name}`);
-    return formatacao;
+    return books.map((item) => `${item.name} - ${item.genre} - ${item.author.name}`);
   }
   
   assert.deepStrictEqual(formatedBookNames(), expectedResult);
