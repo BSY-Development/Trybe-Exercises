@@ -79,7 +79,7 @@ function reduceNames() {
 
 // Calcule a média de idade que as pessoas autoras tinham quando seus respectivos livros foram lançados.
 
-const expectedResult = 43;
+// const expectedResult = 43;
 
 function averageAge() {
   const soma = books.reduce((acc, item) => acc += (item.releaseYear - item.author.birthYear), 0);
@@ -87,4 +87,13 @@ function averageAge() {
 }
 
 
-assert.strictEqual(averageAge(), expectedResult);
+// assert.strictEqual(averageAge(), expectedResult);
+
+const expectedResult = 'As Crônicas de Gelo e Fogo';
+// Encontre o livro com o maior nome
+
+function longestNamedBook() {
+  return books.reduce((acc, item) => (acc.length > item.name.length) ? acc : item.name, '')
+}
+
+assert.deepStrictEqual(longestNamedBook(), expectedResult);
