@@ -20,12 +20,13 @@ const less8000 = () => {
       arr.push(Math.pow(Math.ceil(Math.random() * 50), 2));
     }
     const sum = arr.reduce((acc, item) => acc + item, 0);
-    console.log(sum);
+    // console.log(sum);
     (sum < 8000) ? resolve(sum) : reject();
   })
 
   myPromise
-  .then((sum) => console.log([2, 3, 5, 10].map((item) => sum / item)))
+  .then((sum) => [2, 3, 5, 10].map((item) => sum / item))
+  .then((array) => array.reduce((acc, item) => acc + item, 0))
   .catch(() => console.log('É mais de oito mil! Essa promise deve estar quebrada!'));
 }
 
