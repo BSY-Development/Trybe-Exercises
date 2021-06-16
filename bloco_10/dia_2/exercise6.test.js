@@ -28,10 +28,26 @@ const findAnimalByName = (nome) => (
   })
 );
 
+const findAnimalByAge = (age) => (
+  new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const arrayAnimals = Animals.filter((item) => item.age === age);
+      if (arrayAnimals.length !== 0) {
+        return resolve(arrayAnimals);
+      };
+
+      return reject('Nenhum animal com essa idade!');
+    }, 200);
+  })
+);
+
 const getAnimal = (name) => {
   return findAnimalByName(name).then(list => list)
 };
 
+const getAnimalByAge = (age) => {
+  return findAnimalByAge(age).then(animal => animal);
+};
 
 describe('Testando promise - findAnimalByName', () => {
   describe('Quando existe o animal com o nome procurado', () => {
@@ -53,6 +69,21 @@ describe('Testando promise - findAnimalByName', () => {
       return getAnimal('Bob').catch(error =>
         expect(error).toEqual('Nenhum animal com esse nome!')
       );
+    });
+  });
+
+  describe('Quando existe o animal com a idade procurada', () => {
+    test('Retorne o objeto do animal', () => {
+      expect.assertions(1);
+      const animalEncontrado = [{ name: 'Soneca', age: 2, type: 'Dog' }];
+      return expect(getAnimalByAge(2)).resolves.toEqual(animalEncontrado);
+    });
+  });
+
+  describe('Quando não existe o animal com a idade procurada', () => {
+    test('Retorna o erro', () => {
+      expect.assertions(1);
+      return expect(getAnimalByAge(10)).rejects.toBe('Nenhum animal com essa idade!');
     });
   });
 });
