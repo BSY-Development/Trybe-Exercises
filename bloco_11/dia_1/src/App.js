@@ -1,25 +1,22 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
-function App() {
+const Task = (value) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <li>{value}</li>
   );
+}
+
+const Techs = ['HTML', 'CSS', 'Javascript', 'React'];
+
+class App extends React.Component {
+  render() {
+    const toUnderstand = Techs.map((item) => Task(item));
+    return (
+      <ul>{ toUnderstand }</ul>
+    );
+  }
 }
 
 export default App;
