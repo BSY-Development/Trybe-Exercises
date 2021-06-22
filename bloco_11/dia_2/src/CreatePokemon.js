@@ -4,7 +4,7 @@ import './CreatePokemon.css'
 
 class CreatePokemon extends React.Component {
   render() {
-    return (<div className='outside-div'>
+    return (
       <div className='inside-div'>
       <div>
         <p>{this.props.pokemon.name}</p>
@@ -12,7 +12,6 @@ class CreatePokemon extends React.Component {
         <p>{this.props.pokemon.averageWeight.value} {this.props.pokemon.averageWeight.measurementUnit}</p>
       </div>
         <img src={this.props.pokemon.image} alt={this.props.pokemon.name} />
-    </div>
     </div>)
   }
 }
