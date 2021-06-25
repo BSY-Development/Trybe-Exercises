@@ -43,6 +43,8 @@ class App extends React.Component {
           <br />
 
         </fieldset>
+        <button type='submit'>Criar</button>
+        <button type='reset'>Limpar</button>
       </form>
     );
   }
