@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { actionCadastrar } from '../redux/actions/index';
+import Logado from './Logado';
 
 class Cadastro extends React.Component {
   constructor() {
@@ -24,9 +25,9 @@ class Cadastro extends React.Component {
 
   render() {
     const { name, email, age, password } = this.state;
-    const { signUp } = this.props;
+    const { signUp, isLogged } = this.props;
     return (
-      <fieldset>
+      !isLogged ? <fieldset>
         <form>
           <label>
             Nome:
@@ -49,13 +50,17 @@ class Cadastro extends React.Component {
           </label>
           <button type="button" onClick={ () => signUp(this.state) }>Cadastrar</button>
         </form>
-      </fieldset>
+      </fieldset> : <Logado />
     );
   }
 }
+
+const mapStateToProps = (state) => ({
+  isLogged: state.isLogged,
+});
 
 const mapDispatchToProps = (dispatch) => ({
   signUp: (state) => dispatch(actionCadastrar(state)),
 });
 
-export default connect(null, mapDispatchToProps)(Cadastro);
+export default connect(mapStateToProps, mapDispatchToProps)(Cadastro);

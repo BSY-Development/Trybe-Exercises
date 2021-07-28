@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Logado from './Logado';
 import { actionLogin } from '../redux/actions/index';
+
 
 class Login extends React.Component {
   constructor() {
@@ -21,8 +23,9 @@ class Login extends React.Component {
     const user = users.find((item) => item.email === email && item.password === password);
     if (user) {
       login(user);
+      this.props.history.push('/content');
     } else {
-      console.log('user nao existe');
+      alert('Usuário não encontrado');
     }
   }
 
@@ -34,8 +37,9 @@ class Login extends React.Component {
 
   render() {
     const { email, password } = this.state;
+    const { isLogged } = this.props;
     return (
-      <div>
+      !isLogged ? <div>
         <h1>Login</h1>
         <label>
           E-mail:
@@ -46,13 +50,14 @@ class Login extends React.Component {
           <input name="password" value={ password } type="password" onChange={ this.handleChange } />
         </label>
         <button type="button" onClick={ this.checkIfSigned }>Login</button>
-      </div>
+      </div> : <Logado />
     );
   }
 }
 
 const mapStateToProps = (state) => ({
   users: state.users,
+  isLogged: state.isLogged,
 });
 
 const mapDispatchToProps = (dispatch) => ({

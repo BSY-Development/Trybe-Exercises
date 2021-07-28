@@ -14,7 +14,9 @@ const reducer = (state = INITIAL_STATE, action) => {
     case 'ACTION_CADASTRAR':
       return { ...state, users: state.users.concat(action.payload) };
     case 'ACTION_LOGIN':
-      return { ...state, isLogged: true, user: action.payload }
+      return { ...state, isLogged: true, user: action.payload };
+    case 'ACTION_LOGOUT':
+      return { ...state, isLogged: false };
     default:
       return state;
   }
