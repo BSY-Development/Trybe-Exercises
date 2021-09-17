@@ -25,11 +25,49 @@ FROM
     BoxOffice ON id = movie_id
 ORDER BY rating DESC;
 
--- Exercício 4: Utilizando o LEFT JOIN , faça uma busca que retorne todos os dados dos cinemas, mesmo os que não possuem filmes em cartaz e, adicionalmente, os dados dos filmes que estão em cartaz nestes cinemas. Retorne os nomes dos cinemas em ordem alfabética.
+-- Exercício 4: Utilizando o LEFT JOIN , faça uma busca que retorne todos os dados dos cinemas, mesmo 
+-- os que não possuem filmes em cartaz e, adicionalmente, os dados dos filmes que estão em cartaz nestes 
+-- cinemas. Retorne os nomes dos cinemas em ordem alfabética.
+SELECT 
+    name, location, title
+FROM
+    Theater
+        LEFT JOIN
+    Movies ON Theater.id = Movies.theater_id
+ORDER BY name ASC;
 
--- Exercício 5: Utilizando o RIGHT JOIN , faça uma busca que retorne todos os dados dos filmes, mesmo os que não estão em cartaz e, adicionalmente, os dados dos cinemas que possuem estes filmes em cartaz. Retorne os nomes dos cinemas em ordem alfabética.
+-- Exercício 5: Utilizando o RIGHT JOIN , faça uma busca que retorne todos os dados dos filmes, mesmo 
+-- os que não estão em cartaz e, adicionalmente, os dados dos cinemas que possuem estes filmes em cartaz. 
+-- Retorne os nomes dos cinemas em ordem alfabética.
+SELECT 
+    title, director, name
+FROM
+    Theater
+        RIGHT JOIN
+    Movies ON Theater.id = Movies.theater_id
+ORDER BY name ASC;
 
 -- Exercício 6: Faça duas buscas, uma utilizando SUBQUERY e outra utilizando INNER JOIN , que retornem os títulos dos filmes que possuem avaliação maior que 7.5.
+SELECT 
+    title
+FROM
+    Movies
+WHERE
+    id IN (SELECT 
+            movie_id
+        FROM
+            BoxOffice
+        WHERE
+            rating > 7.5);
+-- 
+SELECT 
+    title
+FROM
+    Movies
+        INNER JOIN
+    BoxOffice ON id = movie_id
+WHERE
+    rating > 7.5;
 
 -- Exercício 7: Faça duas buscas, uma utilizando SUBQUERY e outra utilizando INNER JOIN , que retornem as avaliações dos filmes lançados depois de 2009.
 
