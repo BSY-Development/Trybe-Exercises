@@ -26,7 +26,7 @@ AFTER INSERT ON movies
 FOR EACH ROW
 BEGIN
 	INSERT INTO movies_logs (movie_id, executed_action, log_date)
-    VALUES (NEW.movie_id, 'Movie', NOW());
+    VALUES (NEW.movie_id, 'INSERT', NOW());
 END $$
 
 DELIMITER ;
