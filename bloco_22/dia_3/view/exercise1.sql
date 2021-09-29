@@ -9,8 +9,8 @@ CREATE VIEW film_with_categories AS
 		film_category fc
 			INNER JOIN
 		film f ON f.film_id = fc.film_id
-			INNER JOIN
+      INNER JOIN
 		category c ON fc.category_id = c.category_id
-	ORDER BY f.title;
-    
+  ORDER BY f.title;
+
 SELECT * FROM film_with_categories;
